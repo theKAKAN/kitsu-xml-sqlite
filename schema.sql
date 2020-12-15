@@ -1,0 +1,23 @@
+CREATE TABLE animeStatus(
+	malId INTEGER DEFAULT NULL,
+	name TEXT DEFAULT NULL,
+	watchedEpisodes INTEGER DEFAULT 0,
+	startDate TEXT DEFAULT NULL,
+	finishDate TEXT DEFAULT NULL,
+	score INTEGER DEFAULT NULL,
+	status TEXT DEFAULT "Plan to Watch",
+	timesWatched INTEGER DEFAULT 0,
+	updateOnImport INTEGER DEFAULT 1
+);
+CREATE TABLE mangaStatus(
+	malId INTEGER DEFAULT NULL,
+	name TEXT DEFAULT NULL,
+	readChapters INTEGER DEFAULT 0,
+	readVolumes INTEGER DEFAULT 0,
+	startDate TEXT DEFAULT NULL,
+	finishDate TEXT DEFAULT NULL,
+	status TEXT DEFAULT "Plan to Read",
+	score INTEGER DEFAULT NULL,
+	timesRead INTEGER DEFAULT 0,
+	updateOnImport INTEGER DEFAULT 1
+)
