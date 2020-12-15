@@ -4,6 +4,7 @@ import parse from "https://denopkg.com/nekobato/deno-xml-parser/index.ts";
 import { parse as parseDate } from 'https://deno.land/std/datetime/mod.ts'
 import { DB } from "https://deno.land/x/sqlite/mod.ts";
 
+const USERNAME: string = "KAKAN";
 
 // This assumes that you've already created the database with the correct
 // schema. If not, run `sqlite3 kitsu.db < schema.sql` to create it
@@ -14,8 +15,8 @@ const db = new DB("./kitsu.db");
 // of doing so in a single transaction
 
 
-const animeLibrary = parse(await Deno.readTextFile('./kitsu-KAKAN-anime.xml')),
-	mangaLibrary = parse(await Deno.readTextFile('./kitsu-KAKAN-manga.xml'));
+const animeLibrary = parse(await Deno.readTextFile('./kitsu-'+USERNAME+'-anime.xml')),
+	mangaLibrary = parse(await Deno.readTextFile('./kitsu-'+USERNAME+'-manga.xml'));
 
 writeToSqlite( "anime", animeLibrary?.root?.children ?? [] );
 writeToSqlite( "manga", mangaLibrary?.root?.children ?? [] );

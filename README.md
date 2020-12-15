@@ -16,7 +16,8 @@ I think I might just add a check and not add those titles at all, but we'll see 
 # How to run it?
 
 You will need [deno](https://deno.land/) and also `sqlite3` CLI for now to run it.  
-The command to run it is:  
+After that, open `main.ts` and fill the username with your username( _since the export files are named as_ `kitsu-USERNAME-manga.xml` ) and also place your exported xmls in this folder  
+After that, you can use the following commands:  
 ```
 sqlite3 kitsu.db < schema.sql
 deno --allow-read --allow-write main.ts
